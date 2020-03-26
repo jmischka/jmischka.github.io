@@ -1,7 +1,7 @@
 {
-  "name": "arcticBoundaries",
+  "name": "technology-175",
   "version": "1.0.0",
-  "description": "Graphic display for Arctic Boundaries feature",
+  "description": "Technology timeline for Scientific American 175 Anniversary",
   "private": true,
   "directories": {
     "doc": "doc"
@@ -11,14 +11,14 @@
     "build": "webpack"
   },
   "keywords": [],
-  "author": "",
+  "author": "Jason Mischka",
   "license": "ISC",
   "devDependencies": {
-    "@babel/cli": "^7.5.5",
-    "@babel/core": "^7.5.5",
-    "@babel/preset-env": "^7.5.5",
-    "babel-loader": "^8.0.6",
-    "webpack": "^4.39.1",
-    "webpack-cli": "^3.3.6"
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "babel-loader": "^8.1.0",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
   }
 }
