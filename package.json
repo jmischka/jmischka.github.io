@@ -1,7 +1,7 @@
 {
-  "name": "technology-175",
+  "name": "CovidWorkers",
   "version": "1.0.0",
-  "description": "Technology timeline for Scientific American 175 Anniversary",
+  "description": "Covid Workers Interactive",
   "private": true,
   "directories": {
     "doc": "doc"
@@ -11,14 +11,14 @@
     "build": "webpack"
   },
   "keywords": [],
-  "author": "Jason Mischka",
+  "author": "https://www.jasonmischka.com",
   "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.8.4",
-    "@babel/core": "^7.9.0",
-    "@babel/preset-env": "^7.9.0",
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
     "babel-loader": "^8.1.0",
-    "webpack": "^4.42.1",
+    "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11"
   }
 }
