@@ -7,15 +7,6 @@ let audioSrc;
 let timer;
 let progressBar;
 
-// PAGE FUNCTIONS
-// function handleMouseEnter() {
-// 	this.parentElement.classList.add('hovering');
-// }
-
-// function handleMouseLeave() {
-// 	this.parentElement.classList.remove('hovering');
-// }
-
 function funcProgress() {
 	let duration = audioSrc.duration;
 	let time = audioSrc.currentTime;
@@ -92,7 +83,7 @@ function handleScroll() {
 				clearInterval(timer);
 				progressBar.style.width = 0;
 			}
-			setTimeout(removeClass, 1000);
+			setTimeout(removeClass, 500);
 		} else if (index == 0 && item.classList.contains('scrolled') && distanceScrolled < item.offsetTop + ((item.parentElement.offsetTop + item.parentElement.offsetParent.offsetTop) - (window.innerHeight / 1.5))) {
 			function removeClass(){
 				item.classList.remove('scrolled');
@@ -109,7 +100,7 @@ function handleScroll() {
 				clearInterval(timer);
 				progressBar.style.width = 0;
 			}
-			setTimeout(removeClass, 1000);
+			setTimeout(removeClass, 500);
 		}
 	});
 }
@@ -118,14 +109,6 @@ function handleScroll() {
 
 window.addEventListener('scroll', handleScroll);
 
-// for (let i = 0; i < covText.length; i++) {
-// 	covText[i].addEventListener('mouseenter', handleMouseEnter);
-// }
-
-// for (let i = 0; i < covText.length; i++) {
-// 	covText[i].addEventListener('mouseleave', handleMouseLeave);
-// }
-
 for (let i = 0; i < covAudioButtons.length; i++) {
 	covAudioButtons[i].addEventListener('click', handleAudioButton);
 }
@@ -133,4 +116,3 @@ for (let i = 0; i < covAudioButtons.length; i++) {
 for (let i = 0; i < transcriptButtons.length; i++) {
 	transcriptButtons[i].addEventListener('click', handleTransButton)
 }
-

@@ -231,6 +231,18 @@ p {
     color: #656565;
 }
 
+.covWork-intro a {
+    display: inline;
+    text-decoration: none;
+    border-bottom: 1px dotted #656565;
+    color: #656565;
+}
+
+.covWork-intro a:hover {
+    color: #939393;
+    border-bottom: 1px dotted #939393;
+}
+
 .covWork-voiceList,
 .covWork-relatedList {
     position: relative; 
@@ -286,16 +298,16 @@ p {
     top: 0;
     width: 100%;
     height: 100vh;
-    z-index: -100;
+    z-index: -10;
     overflow: hidden;
 }
 
 .covWork-image {
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -304,9 +316,9 @@ p {
             filter: saturate(100%);
     display: none;
     background-color: #F2F2F2;
-    -webkit-transition-duration: 1s;
-         -o-transition-duration: 1s;
-            transition-duration: 1s;
+    -webkit-transition-duration: .5s;
+         -o-transition-duration: .5s;
+            transition-duration: .5s;
     -webkit-animation-name: fadeIn;
             animation-name: fadeIn;
     -webkit-animation-duration: 1s;
@@ -322,7 +334,7 @@ p {
     width: 100%;
     height: auto;
     padding: 25px;
-    background-color: rgba(242,242,242,.95);
+    background-color: white;
     -webkit-transition-duration: 1s;
          -o-transition-duration: 1s;
             transition-duration: 1s;
@@ -333,23 +345,11 @@ p {
     display: block;
 }
 
-.covWork-voiceList .covWork-voiceItem:nth-child(odd).hovering .covWork-itemImg .covWork-image,
-.covWork-voiceList .covWork-voiceItem:nth-child(even).hovering .covWork-itemImg .covWork-image,
 .covWork-voiceList .covWork-voiceItem:nth-child(odd).playing .covWork-itemImg .covWork-image,
 .covWork-voiceList .covWork-voiceItem:nth-child(even).playing .covWork-itemImg .covWork-image {
     -webkit-filter: saturate(250%);
             filter: saturate(250%);
 }
-
-/*.covWork-voiceList .covWork-voiceItem:nth-child(odd).hovering .covWork-itemText,
-.covWork-voiceList .covWork-voiceItem:nth-child(even).hovering .covWork-itemText {
-    background-color: rgba(235,238,242,.85);
-}*/
-
-/*.covWork-voiceList .covWork-voiceItem:nth-child(odd).playing .covWork-itemText,
-.covWork-voiceList .covWork-voiceItem:nth-child(even).playing .covWork-itemText {
-    background-color: #e0b3ff;
-}*/
 
 .covWork-textTopic {
     color: #C2645F;
@@ -799,25 +799,25 @@ p {
    ========================================================================== */
 
 @media only screen and (min-width: 800px) {
-    .covWork-voiceList .covWork-voiceItem:nth-child(odd) .covWork-itemImg {
+    .covWork-voiceList .covWork-voiceItem:nth-child(odd) .covWork-itemImg,
+    .covWork-voiceList .covWork-voiceItem:nth-child(odd) .covWork-itemImg .covWork-image {
         left: calc((100% / 12) * 6);
         width: calc((100% / 12) * 6);
     }
 
-    .covWork-voiceList .covWork-voiceItem:nth-child(even) .covWork-itemImg {
+    .covWork-voiceList .covWork-voiceItem:nth-child(even) .covWork-itemImg,
+    .covWork-voiceList .covWork-voiceItem:nth-child(even) .covWork-itemImg .covWork-image {
         width: calc((100% / 12) * 6);
     }
 
     .covWork-voiceList .covWork-voiceItem:nth-child(odd) .covWork-itemText {
         margin: 0 0 0 calc((100% / 12) * 1);
         width: calc((100% / 12) * 5);
-        background-color: transparent;
     }
 
     .covWork-voiceList .covWork-voiceItem:nth-child(even) .covWork-itemText {
         margin: 0 0 0 calc((100% / 12) * 6);
         width: calc((100% / 12) * 5);
-        background-color: transparent;
     }
 
     .covWork-relatedListItem {
@@ -831,12 +831,14 @@ p {
         letter-spacing: -2px;
     }
 
-    .covWork-voiceList .covWork-voiceItem:nth-child(odd) .covWork-itemImg {
+    .covWork-voiceList .covWork-voiceItem:nth-child(odd) .covWork-itemImg,
+    .covWork-voiceList .covWork-voiceItem:nth-child(odd) .covWork-itemImg .covWork-image {
         left: calc((100% / 12) * 5);
         width: calc((100% / 12) * 7);
     }
 
-    .covWork-voiceList .covWork-voiceItem:nth-child(even) .covWork-itemImg {
+    .covWork-voiceList .covWork-voiceItem:nth-child(even) .covWork-itemImg,
+    .covWork-voiceList .covWork-voiceItem:nth-child(even) .covWork-itemImg .covWork-image {
         width: calc((100% / 12) * 7);
     }
 
@@ -926,4 +928,3 @@ p {
     page-break-after: avoid;
   }
 }
-
