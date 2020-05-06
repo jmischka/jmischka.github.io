@@ -1,118 +1,208 @@
-const covItems = Array.from(document.querySelectorAll('.covWork-voiceItem'));
-const covText = Array.from(document.querySelectorAll('.covWork-itemText'));
-const covAudioButtons = Array.from(document.querySelectorAll('.covWork-audioButton'));
-const transcriptButtons = document.querySelectorAll('.covWork-transcriptButton');
+( function() {
 
-let audioSrc;
-let timer;
-let progressBar;
+	const outerWrapper = document.querySelector('.tech175-timeline-outerWrapper');
+	const timeline = document.querySelector('.tech175-timeline');
+	const titleSlide = document.querySelector('.tech175-titleSlide');
+	const title = document.querySelector('.tech175-titleSlide-title');
+	const titleTick = document.querySelector('.tech175-titleSlide-titleTick');
+	const timelineEntries = Array.from(document.querySelectorAll('.tech175-timelineEntry'));
+	const trigger = document.querySelector('.tech175-bkgrndTrggr');
+	const scrollTick = document.querySelector('.tech175-titleSlide-scroll');
+	const slug = document.querySelector('.tech175-titleSlide-slug');
+	const futureButtons = document.querySelectorAll('.tech175-futureButton');
+	const closeButtons = document.querySelectorAll('.tech175-videoPanel-closeButton');
+	const coverLinks = document.querySelectorAll('.tech175-timelineEntry-coverLink');
 
-function funcProgress() {
-	let duration = audioSrc.duration;
-	let time = audioSrc.currentTime;
-	progressBar.style.width = (time / duration) * 100 + '%';
-}
+	let mobile = false;
 
-function handleAudioButton(e) {
-	e.preventDefault();
-	let audio = this.dataset.audio;
-	audioSrc = document.getElementById(audio);
-	progressBar = this.nextElementSibling.children[0];
-	this.classList.toggle('playing');
-	this.parentElement.offsetParent.parentElement.offsetParent.classList.toggle('playing');
-	if (this.classList.contains('playing')) {
-		this.parentElement.classList.add('playing');
-		timer = setInterval(funcProgress, 1000);
-		audioSrc.play();
-	} else {
-		this.parentElement.classList.remove('playing');
-		audioSrc.pause();
-		audioSrc.currentTime = 0;
-		clearInterval(timer);
-		progressBar.style.width = 0;	
+
+// FUNCTION HORIZONTAL SCROLL for Desktop
+	function horizontalScroll() {
+		if (mobile) {
+			return;
+		} else {
+			let distanceScrolled = window.pageYOffset;
+			timeline.style.left = -distanceScrolled + 'px';
+			timelineEntries.forEach((entry, index) => {
+				if (index == 0 && !entry.classList.contains('in-view') && distanceScrolled > entry.offsetLeft - window.innerWidth) {
+					entry.classList.add('in-view');
+				} else if (index > 0 && !entry.classList.contains('in-view') && distanceScrolled > entry.offsetLeft) {
+					entry.classList.add('in-view');
+				} else if (index > 0 && entry.classList.contains('in-view') && distanceScrolled < entry.offsetLeft) {
+					function removeClass() {
+						entry.classList.remove('in-view');
+						entry.firstElementChild.style.opacity = '1';
+					}
+					entry.firstElementChild.style.opacity = '0';
+					setTimeout(removeClass, 1000);
+				} else if (index == 0 && entry.classList.contains('in-view') && distanceScrolled < entry.offsetLeft - window.innerWidth) {
+					function removeClass() {
+						entry.classList.remove('in-view');
+						entry.firstElementChild.style.opacity = '1';
+					}
+					entry.firstElementChild.style.opacity = '0';
+					setTimeout(removeClass, 1000);
+				}
+			})
+			if (!trigger.classList.contains('scrolled') && distanceScrolled > trigger.offsetTop - window.innerHeight) {
+				trigger.classList.add('scrolled');
+				titleSlide.firstElementChild.style.opacity = '0';
+				for (let i = 0; i < timelineEntries.length; i++) {
+					timelineEntries[i].firstElementChild.style.opacity = '0';
+				}
+			} else if (trigger.classList.contains('scrolled') && distanceScrolled < trigger.offsetTop - window.innerHeight) {
+				trigger.classList.remove('scrolled');
+				titleSlide.firstElementChild.style.opacity = '1';
+				for (let i = 0; i < timelineEntries.length; i++) {
+					timelineEntries[i].firstElementChild.style.opacity = '1';
+				}
+			}
+		}	
 	}
-}
 
-function handleTransButton(e) {
-	e.preventDefault();
-	this.classList.toggle('clicked');
-	if (this.classList.contains('clicked')) {
-		this.innerHTML = 'Close audio transcript';
-		this.style.color = '#C2645F';
-		this.nextElementSibling.style.display = 'block';
-	} else {
-		this.innerHTML = '<img src="img/reading-icon2.png">Read audio transcript';
-		this.style.color = 'black';
-		this.nextElementSibling.style.display = 'none';
+// FUNCTION VERTICAL SCROLL FUNCTION for Mobile
+	function verticalScroll() {
+		if (!mobile) {
+			return;
+		} else {
+			let distanceScrolled = window.pageYOffset;
+			timelineEntries.forEach(entry => {
+				if (!entry.classList.contains('in-view') && distanceScrolled > entry.offsetTop + entry.parentElement.offsetTop + entry.parentElement.offsetParent.offsetTop + entry.parentElement.offsetParent.parentElement.offsetTop) {
+					entry.classList.add('in-view');
+				} else if (entry.classList.contains('in-view') && distanceScrolled < entry.offsetTop + entry.parentElement.offsetTop + entry.parentElement.offsetParent.offsetTop + entry.parentElement.offsetParent.parentElement.offsetTop) {
+					function removeClass() {
+						entry.classList.remove('in-view');
+						entry.firstElementChild.style.opacity = '1';
+					}
+					entry.firstElementChild.style.opacity = '0';
+					setTimeout(removeClass, 1000);
+				}
+			})
+			if (!trigger.classList.contains('scrolled') && distanceScrolled > trigger.offsetTop - window.innerHeight) {
+				trigger.classList.add('scrolled');
+				titleSlide.firstElementChild.style.opacity = '0';
+				for (let i = 0; i < timelineEntries.length; i++) {
+					timelineEntries[i].firstElementChild.style.opacity = '0';
+				}
+			} else if (trigger.classList.contains('scrolled') && distanceScrolled < trigger.offsetTop - window.innerHeight) {
+				trigger.classList.remove('scrolled');
+				titleSlide.firstElementChild.style.opacity = '1';
+				for (let i = 0; i < timelineEntries.length; i++) {
+					timelineEntries[i].firstElementChild.style.opacity = '1';
+				}
+			}
+		}	
 	}
-}
 
-function handleScroll() {
-	let distanceScrolled = window.pageYOffset;
+// PAGE FUNCTIONS
+	function handleButtons(e) {
+		e.preventDefault();
+		let trigger = this.dataset.videolink;
+		let panel = document.getElementById(trigger);
+		panel.classList.add('activated');
+		panel.firstElementChild.style.opacity = '1';
+	}
 
-	covItems.forEach((item,index) => {
-		if (index == 0 && !item.classList.contains('scrolled') && distanceScrolled > item.offsetTop + ((item.parentElement.offsetTop + item.parentElement.offsetParent.offsetTop) - (window.innerHeight / 1.5))) {
-			item.classList.add('scrolled');
-		} else if (index > 0 && !item.classList.contains('scrolled') && distanceScrolled > item.offsetTop + (item.parentElement.offsetTop + item.parentElement.offsetParent.offsetTop)) {
-			covItems[index - 1].children[0].firstElementChild.style.opacity = '0';
-			item.classList.add('scrolled');
-			if (covItems[index - 1].classList.contains('playing')) {
-				let plItems = document.querySelectorAll('.playing');
-				for (let i = 0; i < plItems.length; i++) {
-					plItems[i].classList.remove('playing');
-				}
-				covItems[index - 1].lastElementChild.children[4].lastElementChild.pause();
-				covItems[index - 1].lastElementChild.children[4].lastElementChild.currentTime = 0;
-				clearInterval(timer);
-				progressBar.style.width = 0;
+	function handleCloseButtons(e) {
+		e.preventDefault();
+		this.parentElement.firstElementChild.style.opacity = '0';
+		this.parentElement.classList.remove('activated');
+		let iFrame = this.parentElement.firstElementChild.children[1].firstElementChild;
+		let iframeSrc = iFrame.src;
+		iFrame.src = iframeSrc;
+	}
+
+	function handleCvrLinkMob(e) {
+		if (!mobile) {
+			return;
+		} else {
+			e.preventDefault();
+			this.classList.toggle('activelink');
+			if (this.classList.contains('activelink')) {
+				this.style.backgroundColor = 'white';
+				this.children[2].style.opacity = '1';
+				this.children[2].style.visibility = 'visible';
+			} else {
+				this.style.backgroundColor = '#F2DE77';
+				this.children[2].style.opacity = '0';
+				this.children[2].style.visibility = 'hidden';
 			}
-		} else if (index > 0 && item.classList.contains('scrolled') && distanceScrolled < item.offsetTop + (item.parentElement.offsetTop + item.parentElement.offsetParent.offsetTop)) {
-			function removeClass(){
-				item.classList.remove('scrolled');
-				item.children[0].firstElementChild.style.opacity = '1';
-			}
-			covItems[index - 1].children[0].firstElementChild.style.opacity = '1';
-			item.children[0].firstElementChild.style.opacity = '0';
-			if (item.classList.contains('playing')) {
-				let plItems = document.querySelectorAll('.playing');
-				for (let i = 0; i < plItems.length; i++) {
-					plItems[i].classList.remove('playing');
-				}
-				item.lastElementChild.children[4].lastElementChild.pause();
-				item.lastElementChild.children[4].lastElementChild.currentTime = 0;
-				clearInterval(timer);
-				progressBar.style.width = 0;
-			}
-			setTimeout(removeClass, 500);
-		} else if (index == 0 && item.classList.contains('scrolled') && distanceScrolled < item.offsetTop + ((item.parentElement.offsetTop + item.parentElement.offsetParent.offsetTop) - (window.innerHeight / 1.5))) {
-			function removeClass(){
-				item.classList.remove('scrolled');
-				item.children[0].firstElementChild.style.opacity = '1';
-			}
-			item.children[0].firstElementChild.style.opacity = '0';
-			if (item.classList.contains('playing')) {
-				let plItems = document.querySelectorAll('.playing');
-				for (let i = 0; i < plItems.length; i++) {
-					plItems[i].classList.remove('playing');
-				}
-				item.lastElementChild.children[4].lastElementChild.pause();
-				item.lastElementChild.children[4].lastElementChild.currentTime = 0;
-				clearInterval(timer);
-				progressBar.style.width = 0;
-			}
-			setTimeout(removeClass, 500);
 		}
-	});
-}
+	}
 
-// PAGE EVENTLISTENERS
+	function handleCvrLinkDesk(e) {
+		if (mobile) {
+			return;
+		} else {
+			e.preventDefault();
+		}
+	}
 
-window.addEventListener('scroll', handleScroll);
+	function titleMobDisplay() {
+		title.style.display = 'block';
+		titleTick.style.display = 'block';
+		slug.style.display = 'block';
+	}
 
-for (let i = 0; i < covAudioButtons.length; i++) {
-	covAudioButtons[i].addEventListener('click', handleAudioButton);
-}
+	function titleDeskDisplay() {
+		title.style.display = 'block';
+		titleTick.style.display = 'block';
+		scrollTick.style.display = 'block';
+		slug.style.display = 'block';
+	}
 
-for (let i = 0; i < transcriptButtons.length; i++) {
-	transcriptButtons[i].addEventListener('click', handleTransButton)
-}
+// PAGE EVENT LISTENERS
+	for (let i = 0; i < futureButtons.length; i++) {
+		futureButtons[i].addEventListener('click', handleButtons);
+	}
+
+	for (let i = 0; i < closeButtons.length; i++) {
+		closeButtons[i].addEventListener('click', handleCloseButtons);
+	}
+
+// SET PLATFORM - Mobile or Desktop
+	function setPlatform() {
+		if (window.innerWidth > 960) {
+			mobile = false;
+			outerWrapper.style.height = timeline.offsetWidth + (window.innerWidth - window.innerHeight) + 'px';
+			window.addEventListener('scroll', horizontalScroll);
+			for (let i = 0; i < coverLinks.length; i++) {
+				coverLinks[i].addEventListener('click', handleCvrLinkDesk);
+			}
+			setTimeout(titleDeskDisplay, 1000);
+		} else if (window.innerWidth < 960) {
+			mobile = true;
+			outerWrapper.style.height = 'auto';
+			timeline.style.left = '0';
+			window.addEventListener('scroll', verticalScroll);
+			for (let i = 0; i < coverLinks.length; i++) {
+				coverLinks[i].addEventListener('click', handleCvrLinkMob);
+			}
+			setTimeout(titleMobDisplay, 1000);
+		}
+	}
+	setPlatform();
+
+	// WINDOW RESIZE FUNCTIONS
+	function debounce(func, wait, immediate) {
+		var timeout;
+		return function() {
+			var context = this, args = arguments;
+			var later = function() {
+				timeout = null;
+				if (!immediate) func.apply(context, args);
+			};
+			var callNow = immediate && !timeout;
+			clearTimeout(timeout);
+			timeout = setTimeout(later, wait);
+			if (callNow) func.apply(context, args);
+		};
+	};
+
+	const resizeFunction = debounce(function() {
+		setPlatform();
+	}, 250);
+
+	window.addEventListener('resize', resizeFunction);
+
+} )();
