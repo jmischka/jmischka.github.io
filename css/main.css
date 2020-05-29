@@ -1,9 +1,11 @@
-/* * * * * * * 
+/*! HTML5 Boilerplate v7.3.0 | MIT License | https://html5boilerplate.com/ */
 
-Design and Development: Jason Mischka Creative Development
-URL: https://www.jasonmischka.com
-
-* * * * * * * */
+/* main.css 2.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
 
 /* ==========================================================================
    Base styles: opinionated defaults
@@ -93,7 +95,7 @@ textarea {
 }
 
 /* ==========================================================================
-   JM custom styles
+   Author's custom styles
    ========================================================================== */
 
 html {
@@ -109,85 +111,37 @@ html {
 
 h1 {
     margin: 0 0 0 0;
-    font-family: 'Playfair Display', serif;
-    font-weight: 700
-    font-size: 32px;
+    font-family: 'Lora',Brunel-Deck-Semibold,Georgia,serif;
+    font-weight: 600;
+    font-size: 30px;
+    font-style: normal;
     line-height: 1;
 }
 
 p {
-    margin: 0 0 0 0;
-    font-family: 'Playfair Display', serif;
-    font-weight: 400;
+  margin: 0 0 0 0;
+  font-family: Georgia,serif;
+  font-weight: 400;
+  font-style: normal; 
 }
 
-.tech175-timeline-outerWrapper {
+.scr-boil-header {
     position: relative;
     margin: 0 0 0 0;
     width: 100%;
-    min-height: 100vh;
-}
-
-.tech175-timeline-innerWrapper {
-    position: relative;
-}
-
-.tech175-titleSlide-media {
-    position: fixed;
-    -webkit-transition-duration: 1s;
-         -o-transition-duration: 1s;
-            transition-duration: 1s;
-}
-
-.tech175-titleSlide-media,
-.tech175-timelineEntry-media {
-    z-index: -100;
-}
-
-.tech175-timeline-window,
-.tech175-timeline {
-    position: relative;
-}
-
-.tech175-timelineEntry-media {
-    position: fixed;
-    display: none;
-    -webkit-animation-name: fadeIn;
-            animation-name: fadeIn;
-    -webkit-animation-duration: 1s;
-            animation-duration: 1s;
-    -webkit-transition-duration: 1s;
-         -o-transition-duration: 1s;
-            transition-duration: 1s;
-}
-
-.tech175-timelineEntry.in-view .tech175-timelineEntry-media {
-    display: block;
-}
-
-.tech175-timeline-innerWrapper,
-.tech175-timeline-window,
-.tech175-titleSlide-media,
-.tech175-timelineEntry-media {
-    width: 100%;
+    height: 100vh;
     overflow: hidden;
 }
 
-.tech175-timeline-innerWrapper,
-.tech175-timeline-window,
-.tech175-timeline {
+.scr-boil-headerImg {
+    position: relative;
     margin: 0 0 0 0;
-    height: auto;
-}
-
-.tech175-titleSlide-media,
-.tech175-timelineEntry-media {
-    left: 0;
-    top: 0; 
+    width: 100%;
     height: 100vh;
+    overflow: hidden;
 }
 
-.tech175-timelineEntry-media img {
+.scr-boil-headerImg img {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -196,704 +150,420 @@ p {
     -webkit-transform: translate(-50%,-50%);
         -ms-transform: translate(-50%,-50%);
             transform: translate(-50%,-50%);
-}
-
-.tech175-timeline {
-    display: block;
-    width: 100%;
-}
-
-.tech175-timelineEntry,
-.tech175-titleSlide,
-.tech175-timelineIntro {
-    position: relative;
-    width: 100%;
-}
-
-.tech175-titleSlide {
-    height: 100vh;
-}
-
-.tech175-timelineEntry,
-.tech175-timelineIntro {
-    height: auto;
-}
-
-.tech175-timelineEntry {
-    padding: calc(100vh) 0 0 0;
-}
-
-.tech175-timelineIntro {
-    padding: 100px 35px 50px calc(8.333% + 25px);
-    background-color: #141414;
-    -webkit-box-shadow: 0 5px 15px rgba(0,0,0,.7);
-            box-shadow: 0 5px 15px rgba(0,0,0,.7);
-}
-
-.tech175-timelineIntro .tech175-timelineIntro-title {
-    display: block;
-    position: absolute;
-    font-family: 'Playfair Display', serif;
-    font-weight: 600;
-    font-size: calc(100px + (250 - 100) * ((100vw - 375px) / (1600 - 375)));
-    line-height: 1;
-    letter-spacing: -3px;
-    left: 0;
-    top: 0;
-    color: #4D4D4D;
-    -webkit-transition-duration: .3s;
-         -o-transition-duration: .3s;
-            transition-duration: .3s;
-}
-
-.tech175-timelineIntro p {
-    position: relative;
-    margin: 0 auto 0;
-    width: 100%;
-    max-width: 960px;
-    font-size: 24px;
-    color: #9E9E9E;
-}
-
-.tech175-timelineIntro p span {
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    margin: 0 6px;
-    width: 20px;
-    height: 20px;
-    border-radius: 100%;
-    background-color: #F2DE77;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -ms-flex-line-pack: center;
-        align-content: center;
-    font-family: sans-serif;
-    color: black;
-}
-
-.tech175-titleSlide-media img,
-.tech175-titleSlide-media video,
-.tech175-timelineEntry-video video {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: auto;
-    height: 100%;
-    -webkit-transform: translate(-50%,-50%);
-        -ms-transform: translate(-50%,-50%);
-            transform: translate(-50%,-50%);
-    -webkit-animation-name: fadeIn;
-            animation-name: fadeIn;
-    -webkit-animation-duration: 1s;
-            animation-duration: 1s;
 }
 
 @media (min-aspect-ratio: 3/2) {
-    .tech175-titleSlide-media img,
-    .tech175-timelineEntry-media img {
+    .scr-boil-headerImg img {
         width: 100%;
         height: auto;
     }
 }
 
-/*@media (min-aspect-ratio: 4/3) {
-    .tech175-titleSlide-media video {
-        width: 100%;
-        height: auto;
-    }
-}*/
-
-@media (min-aspect-ratio: 16/9) {
-    .tech175-titleSlide-media video,
-    .tech175-timelineEntry-video video {
-        width: 100%;
-        height: auto;
-    }
-}
-
-.tech175-titleSlide-title {
-    position: absolute;
-    left: calc((100% / 12) * 1);
-    top: auto;
-    bottom: 0;
-    width: calc((100% / 12) * 11);
-    padding: 25px 25px 75px 25px;
-    -webkit-animation-name: fadeUp;
-            animation-name: fadeUp;
-    -webkit-animation-duration: 1.5s;
-            animation-duration: 1.5s;
-    -webkit-animation-timing-function: cubic-bezier(0, 0, 0.28, 1.01);
-            animation-timing-function: cubic-bezier(0, 0, 0.28, 1.01);
-}
-
-.tech175-titleSlide-slug {
+.scr-boil-headlineWrapper {
     position: absolute;
     left: 0;
-    top: 38%;
-    width: 65px;
-    height: 65px;
-    -webkit-transform: rotate(-15deg);
-        -ms-transform: rotate(-15deg);
-            transform: rotate(-15deg);
-    -webkit-animation: fadeIn 1.5s ease-in-out;
-            animation: fadeIn 1.5s ease-in-out;
-}
-
-.tech175-titleSlide-slug img {
-    margin: 0 0 0 0;
+    bottom: 0;
     width: 100%;
     height: auto;
+    padding: 25px 25px 100px;
+    background-color: rgba(0,0,0,.4);
 }
 
-.tech175-titleSlide-scroll {
-    position: absolute;
-    font-family: sans-serif;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 1;
-    text-transform: uppercase;
-    left: 50%;
-    bottom: 0;
-    color: white;
-    -webkit-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
-            transform: translateX(-50%);
-    -webkit-animation: fadeIn 1.5s ease-in-out;
-            animation: fadeIn 1.5s ease-in-out;
-}
-
-.tech175-titleSlide-scroll:after {
-    content: " ";
+.scr-boil-TopicSlug {
+    position: relative;
     display: block;
-    margin: 9px auto 0;
-    width: 2px;
-    height: 35px;
-    background-color: white;
-}
-
-.tech175-titleSlide-title,
-.tech175-titleSlide-titleTick,
-.tech175-titleSlide-scroll,
-.tech175-titleSlide-slug {
-    display: none;
-}
-
-.tech175-titleSlide-title p {
-    margin: 16px 0 0 0;
-    font-size: 20px;
-}
-
-.tech175-titleSlide-title h1,
-.tech175-titleSlide-title p {
+    margin: 0 auto 13px;
+    font-family: Benton,Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    font-style: normal;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 3px;
     color: white;
-    text-shadow: 3px 3px 3px rgba(0,0,0,.4);
 }
 
-.tech175-titleSlide-mediaGradient {
+.scr-boil-articleHead,
+.scr-boil-articleSubhead {
+    color: white;
+}
+
+.scr-boil-TopicSlug,
+.scr-boil-articleHead,
+.scr-boil-articleSubhead,
+.scr-boil-articleByline {
+    text-align: left;
+}
+
+.scr-boil-articleHead {
+    margin: 0 auto 9px;
+}
+
+.scr-boil-articleSubhead {
+    margin: 0 auto 0;
+    font-size: 18px;
+    line-height: 1.3;
+}
+
+.scr-boil-articleByline,
+.scr-boil-fullwidthCaption,
+.scr-boil-authorBioText,
+.scr-boil-shareHead-d,
+.scr-boil-newsHead-d,
+.scr-boil-shareHead-m,
+.scr-boil-articleBrief ul li,
+figcaption,
+.scr-boil-articleContent-fullImgCaption,
+.scr-boil-articleShareText-d,
+.scr-boil-newsButton-d {
+    display: block;
+    font-family: Benton,Helvetica,Arial,sans-serif;
+    font-style: normal;
+    line-height: 1.3;
+}
+
+.scr-boil-articleByline,
+.scr-boil-fullwidthCaption,
+.scr-boil-authorBioText,
+.scr-boil-shareHead-d,
+.scr-boil-newsHead-d,
+.scr-boil-shareHead-m,
+figcaption,
+.scr-boil-articleContent-fullImgCaption,
+.scr-boil-articleShareText-d,
+.scr-boil-newsButton-d {
+    font-size: 13px;
+}
+
+.scr-boil-articleBrief ul li {
+    font-size: 16px;
+}
+
+.scr-boil-articleByline,
+.scr-boil-fullwidthCaption,
+.scr-boil-authorBioText,
+figcaption,
+.scr-boil-articleContent-fullImgCaption,
+.scr-boil-articleShareText-d,
+.scr-boil-newsButton-d {
+    font-weight: 400;
+}
+
+.scr-boil-shareHead-d,
+.scr-boil-shareHead-m,
+.scr-boil-newsHead-d {
+    font-weight: 700;
+    text-transform: uppercase;
+    color: black;
+}
+
+.scr-boil-shareHead-d,
+.scr-boil-newsButton-d {
+    text-align: center;
+}
+
+.scr-boil-shareHead-m {
+    text-align: left;
+}
+
+.scr-boil-articleByline {
+    color: #D6D6D6;
+}
+
+.scr-boil-authorBioText,
+.scr-boil-newsButton-d {
+    color: black;
+}
+
+.scr-boil-newsButton-d {
+    margin: 9px 0 0 0;
+    width: 100px;
+    padding: 9px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    background-color: #D9D9D9;
+    -webkit-transition-duration: .5s;
+         -o-transition-duration: .5s;
+            transition-duration: .5s;
+}
+
+.scr-boil-newsButton-d:hover,
+.scr-boil-shareLinks li a:hover {
+    background-color: #F0F0F0;
+}
+
+figcaption {
+    padding: 0 0 9px 0;
+    color: #737373;
+    border-bottom: 1px dotted #737373;
+}
+
+.scr-boil-articleByline:before {
+    content: "";
+    display: block;
+    margin: 16px 0 16px;
+    width: 50px;
+    height: 7px;
+    border-top: 2px solid white;
+    border-bottom: 1px dotted white;
+}
+
+.scr-boil-articleByline a {
+    display: inline-block;
+    margin: 0 0 0 0;
+    text-decoration: none;
+    color: inherit;;
+    border-bottom: 1px dotted white;
+}
+
+.scr-boil-articleByline a:hover {
+    opacity: .7;
+    border-bottom: none;
+}
+
+.scr-boil-fullwidthCaption,
+.scr-boil-articleContent-fullImgCaption {
     position: absolute;
     left: 0;
-    top: 0;
+    bottom: 0;
     width: 100%;
-    height: 100%; 
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#141414+0,061726+0,061726+100&0+0,1+100 */
-background: -moz-radial-gradient(center, ellipse cover,  rgba(6,23,38,0) 0%, rgba(6,23,38,1) 100%); /* FF3.6-15 */
-background: -webkit-radial-gradient(center, ellipse cover,  rgba(6,23,38,0) 0%,rgba(6,23,38,1) 100%); /* Chrome10-25,Safari5.1-6 */
-background: radial-gradient(ellipse at center,  rgba(6,23,38,0) 0%,rgba(6,23,38,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00061726', endColorstr='#061726',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-
-    -webkit-animation-name: fadeIn;
-            animation-name: fadeIn;
-    -webkit-animation-duration: 3s;
-            animation-duration: 3s;
+    height: auto;
+    padding: 9px 25px;
+    color: white;
+    background-color: black;
 }
 
-.tech175-timeline-line {
-    position: fixed;
-    left: calc((100% / 12) * 1);
-    top: 0;
-    width: 1px;
-    height: 100vh;
-    background-color: white;
-    -webkit-box-shadow: 3px 3px 2px rgba(0,0,0,.6);
-            box-shadow: 3px 3px 2px rgba(0,0,0,.6);
-    -webkit-animation-name: lineDrop;
-            animation-name: lineDrop;
-    -webkit-animation-duration: 1.3s;
-            animation-duration: 1.3s;
-    -webkit-animation-timing-function: cubic-bezier(0, 0, 0.28, 1.01);
-            animation-timing-function: cubic-bezier(0, 0, 0.28, 1.01);
-}
-
-.tech175-timelineEntry-text {
+.scr-boil-mainContent {
     position: relative;
     margin: 0 0 0 0;
     width: 100%;
     height: auto;
-    padding: 35px 35px 35px calc(8.333% + 25px);
-    background-color: rgba(20,20,20,.85);
+    padding: 100px 0 75px;
+    border-bottom: 1px dotted black;
 }
 
-.tech175-timelineEntry-coverLink {
+.scr-boil-ledeContent {
+    position: relative;
+    margin: 0 auto 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 100%; 
+    max-width: 1200px;
+    padding: 0 0 0 0;
+}
+
+.scr-boil-articleBrief,
+.scr-boil-articleContent {
+    display: block;
+    position: relative;
+    margin: 0 auto 0; 
+    width: calc((100% / 12) * 12);
+    max-width: 768px;
+    height: auto;
+}
+
+.scr-boil-articleBrief {
+    padding: 25px 25px 25px 25px;
+}
+
+.scr-boil-articleContent {
+    padding: 75px 25px 25px 25px;
+}
+
+.scr-boil-articleBriefHead {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+
+.scr-boil-articleContentSubhead {
+    display: block;
+}
+
+.scr-boil-articleBriefHead,
+.scr-boil-articleContentSubhead {
+    width: 100%;
+    font-family: 'Lora',Brunel-Deck-Semibold,Georgia,serif;
+    font-weight: 600;
+    font-size: 16px;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.scr-boil-articleContent p {
+    margin: 0 0 25px 0;
+    font-size: 16px;
+}
+
+.scr-boil-articleBriefHead:before,
+.scr-boil-articleBriefHead:after {
+    content: "";
+    display: block;
+    margin: 0 0 0 0;
+    width: 33.333%;
+    height: 6px;
+    border-top: 2px solid black;
+    border-bottom: 1px dotted black;
+}
+
+.scr-boil-articleBrief ul,
+.scr-boil-shareLinks {
+    position: relative;
+    width: 100%;
+    height: auto;
+    list-style-type: none;
+}
+
+.scr-boil-articleBrief ul {
+    margin: 0 0 0 0;
+    padding: 20px 0 50px 0;
+    border-bottom: 1px dotted black;
+}
+
+.scr-boil-shareLinks {
+    margin: 0 0 25px 0;
+    padding: 20px 0 20px 0;
+    text-align: left;
+    border-bottom: none;
+}
+
+.scr-boil-articleBrief ul li {
+    position: relative;
+    margin: 0 0 16px 0;
+    width: 100%;
+    height: auto;
+}
+
+.scr-boil-articleBrief ul li:last-child {
+    margin: 0 0 0 0;
+}
+
+.scr-boil-shareLinks li {
     position: relative;
     display: inline-block;
-    margin: 0 0 20px -10px;
-    width: 20px;
-    height: 20px;
-    border-radius: 100%;
-    background-color: #F2DE77;
-    overflow: visible;
-    -webkit-transition-duration: .7s;
-         -o-transition-duration: .7s;
-            transition-duration: .7s;
+    margin: 0 6px;
 }
 
-.tech175-timelineEntry-coverLink span.plus:nth-child(1) {
-    position: absolute;
-    width: 12px;
-    height: 2px;
-    left: 50%;
-    top: 50%;
-    background-color: #261A23;
-    -webkit-transform-origin: center;
-        -ms-transform-origin: center;
-            transform-origin: center;
-    -webkit-transform: translate(-50%,-50%) rotate(90deg);
-        -ms-transform: translate(-50%,-50%) rotate(90deg);
-            transform: translate(-50%,-50%) rotate(90deg);
+.scr-boil-shareLinks li a {
+    position: relative;
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-color: #D9D9D9;
+    -webkit-transition-duration: .5s;
+         -o-transition-duration: .5s;
+            transition-duration: .5s;
 }
 
-.tech175-timelineEntry-coverLink span.plus:nth-child(2) {
+.scr-boil-shareLinks li a img {
     position: absolute;
-    width: 12px;
-    height: 2px;
     left: 50%;
     top: 50%;
-    background-color: #261A23;
-    -webkit-transform-origin: center;
-        -ms-transform-origin: center;
-            transform-origin: center;
+    width: 70%;
+    height: auto;
     -webkit-transform: translate(-50%,-50%);
         -ms-transform: translate(-50%,-50%);
             transform: translate(-50%,-50%);
 }
 
-.tech175-timelineEntry-cover {
-    position: absolute;
-    margin: 0 0 0 0;
-    left: -20px;
-    top: 150%;
-    width: 150px;
-    height: auto;
-    padding: 12px;
-    background-color: #141414;
-    visibility: hidden;
-    opacity: 0;
-    -webkit-box-shadow: 5px 5px 5px rgba(0,0,0,.4);
-            box-shadow: 5px 5px 5px rgba(0,0,0,.4);
-    -webkit-transition-duration: .7s;
-         -o-transition-duration: .7s;
-            transition-duration: .7s;
-}
-
-.tech175-timelineEntry-coverCaption {
-    margin: 6px 0 3px 0;
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    font-size: 13px;
-    letter-spacing: 0;
-    width: 100%;
-    height: auto;
-    color: white;
-}
-
-.tech175-timelineEntry-coverCaption span {
-    display: inline;
-    font-family: sans-serif;
-    font-weight: 700;
-    font-size: 10px;
-    color: #6CC5D9;
-}
-
-.tech175-timelineEntry-cover img {
-    width: 100%;
-    height: auto;
-}
-
-.tech175-timelineEntry-coverLink.activelink,
-.tech175-timelineEntry-coverLink:hover {
-    background-color: white;
-}
-
-.tech175-timelineEntry-coverLink.activelink .tech175-timelineEntry-cover,
-.tech175-timelineEntry-coverLink:hover .tech175-timelineEntry-cover {
-    opacity: 1;
-    visibility: visible;
-}
-
-.tech175-timelineEntry-textWrapper {
+.scr-boil-authorBio-d,
+.scr-boil-articleShare-d {
     display: none;
     position: relative;
     margin: 0 0 0 0;
-    width: 100%;
-    height: auto;
-    -webkit-animation-name: fadeUp;
-            animation-name: fadeUp;
-    -webkit-animation-duration: 1.5s;
-            animation-duration: 1.5s;
 }
 
-.tech175-timelineEntry.in-view .tech175-timelineEntry-textWrapper {
-    display: block;
-}
-
-.tech175-timelineEntry-date {
-    display: block;
-    font-family: 'Playfair Display', serif;
-    font-size: 85px;
-    font-weight: 600;
-    line-height: 1;
-    letter-spacing: -2px;
-    color: #6CC5D9;
-}
-
-.tech175-timelineEntry-title {
-    margin: 16px 0 0 0;
-    font-family: 'Playfair Display', serif;
-    font-size: 24px;
-    font-weight: 600;
-    line-height: 1;
-    color: white;
-}
-
-.tech175-timelineEntry-copy {
-    margin: 18px 0 0 0;
-    font-family: 'Playfair Display', serif;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.4;
-    color: white;
-}
-
-.tech175-futureSlug,
-.tech175-futureCopy {
-    display: block;
-    position: relative;    
-    font-family: sans-serif;   
-}
-
-.tech175-futureSlug {
-    margin: 16px 0 0 0;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 1.2;
-    color: #6CC5D9;
-}
-
-.tech175-futureCopy {
-    margin: 0 0 9px 0;
-    font-weight: 400;
-    font-size: 13px;
-    line-height: 1.4;
-    color: white;
-}
-
-.tech175-futureButton {
-    display: inline-block;
+.scr-boil-authorHeadshot {
     position: relative;
-    font-family: sans-serif;
-    font-size: 9px;
-    font-weight: 400;
-    line-height: 1.2;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    text-decoration: none;
-    background-color: transparent;
-    color: #6CC5D9;
-    -webkit-transition-duration: .5s;
-         -o-transition-duration: .5s;
-            transition-duration: .5s;
-}
-
-.tech175-futureButton:hover {
-    color: white;
-    text-decoration: underline;
-}
-
-.tech175-videoPanel {
-    position: fixed;
-    left: 0;
-    top: 100%;
-    width: 100%;
-    height: 100vh;
-    background-color: #141414;
-    -webkit-transition-duration: .5s;
-         -o-transition-duration: .5s;
-            transition-duration: .5s;
-    -webkit-transition-timing-function: ease-in-out;
-         -o-transition-timing-function: ease-in-out;
-            transition-timing-function: ease-in-out;
-}
-
-.tech175-videoPanel.activated {
-    top: 0;
-}
-
-.tech175-videoPanel-window {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: calc((100% / 12) * 10);
-    height: auto;
-    opacity: 0;
-    -webkit-transform: translate(-50%,-50%);
-        -ms-transform: translate(-50%,-50%);
-            transform: translate(-50%,-50%); 
-    -webkit-transition-duration: 3s; 
-         -o-transition-duration: 3s; 
-            transition-duration: 3s;
-}
-
-.tech175-videoPanel-title {
-    position: relative;
-    display: block;
     margin: 0 0 16px 0;
-    font-family: 'Playfair Display', serif;
-    font-weight: 600;
-    font-size: 28px;
-    line-height: 1.2;
-    color: white;
-}
-
-.tech175-videoPanel-videoWrapper {
-    position: relative;
-    padding-bottom: 56.25%;
-    padding-top: 25px;
-    height: 0;
-    -webkit-box-shadow: 15px 15px 15px rgba(0,0,0,.35);
-            box-shadow: 15px 15px 15px rgba(0,0,0,.35);
-}
-
-.tech175-videoPanel-videoWrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.tech175-videoPanel-closeButton {
-    display: block;
-    position: absolute;
-    top: 50px;
-    right: 50px;
-    width: 40px;
-    height: 40px;
-    border-radius: 100%;
-    background-color: #F95D50;
-    -webkit-transition-duration: .7s;
-         -o-transition-duration: .7s;
-            transition-duration: .7s;
-}
-
-.tech175-videoPanel-closeButton span {
-    position: absolute;
-    width: 30px;
-    height: 2px;
-    left: 50%;
-    top: 50%;
-    background-color: white;
-    -webkit-transition-duration: .7s;
-         -o-transition-duration: .7s;
-            transition-duration: .7s;
-}
-
-.tech175-videoPanel-closeButton span:nth-child(1) {
-    -webkit-transform: translate(-50%,-50%) rotate(-45deg);
-        -ms-transform: translate(-50%,-50%) rotate(-45deg);
-            transform: translate(-50%,-50%) rotate(-45deg);
-}
-
-.tech175-videoPanel-closeButton span:nth-child(2) {
-    -webkit-transform: translate(-50%,-50%) rotate(45deg);
-        -ms-transform: translate(-50%,-50%) rotate(45deg);
-            transform: translate(-50%,-50%) rotate(45deg);
-}
-
-.tech175-videoPanel-closeButton:hover {
-    background-color: white;
-}
-
-.tech175-videoPanel-closeButton:hover span {
-    background-color: black;
-}
-
-.tech175-titleSlide-sticker {
-    position: absolute;
-    left: -20px;
-    top: -35px;
     width: 65px;
     height: 65px;
-    border-radius: 100%;
-    background-color: #E69007;
-    -webkit-box-shadow: 4px 4px 10px rgba(0,0,0,.4);
-            box-shadow: 4px 4px 10px rgba(0,0,0,.4);
+    background-color: #F0F0F0;
 }
 
-.tech175-timelineEntry-tick {
-    display: none;
-}
-
-.tech175-bkgrndTrggr {
-    position: relative;
+.scr-boil-authorHeadshot img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
     width: 100%;
-    height: 100px;
+    height: auto;
+    -webkit-transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
 }
 
-.sampleback {
+.scr-boil-inlinePhoto {
     position: relative;
+    margin: 50px 0 50px 0;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.scr-boil-inlinePhoto img {
+    position: relative;
+    margin: 0 0 9px 0;
+    width: 100%;
+    height: auto;
+}
+
+.scr-boil-articleContentSubhead {
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.scr-boil-articleContent-fullImgWrap,
+.scr-boil-articleContent-fullImg {
+    position: relative;
+    margin: 0 0 0 0;
     width: 100%;
     height: 100vh;
-    background-color: #093969;
 }
 
-.sampleback-text {
+.scr-boil-articleContent-fullImg {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+
+.scr-boil-footerContent-m {
+    position: relative;
     display: block;
-    position: absolute;
-    font-family: sans-serif;
-    font-weight: 700;
-    font-size: 18px;
+    margin: 0 0 0 0;
     width: 100%;
-    top: 50%;
-    left: 0;
-    text-align: center;
-    color: rgba(255,255,255,.7);
-    -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-            transform: translateY(-50%);
+    height: auto;
+    padding: 25px 0;
 }
 
-
-
-/* ==========================================================================
-   CSS ANIMATIONS
-   ========================================================================== */
-
-@-webkit-keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
+.scr-boil-authorBio-m,
+.scr-boil-articleShare-m {
+    padding: 25px 25px;
 }
 
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-@-webkit-keyframes fadeUp {
-    0% {
-        margin-top: 50px;
-        opacity: 0;
-    }
-
-    100% {
-        margin-top: 0;
-        opacity: 1;
-    }
-}
-
-@keyframes fadeUp {
-    0% {
-        margin-top: 50px;
-        opacity: 0;
-    }
-
-    100% {
-        margin-top: 0;
-        opacity: 1;
-    }
-}
-
-@-webkit-keyframes lineDrop {
-    0% {
-        height: 0;
-        opacity: .25;
-    }
-
-    100% {
-        height: 100vh;
-        opacity: 1;
-    }
-}
-
-@keyframes lineDrop {
-    0% {
-        height: 0;
-        opacity: .25;
-    }
-
-    100% {
-        height: 100vh;
-        opacity: 1;
-    }
-}
-
-@-webkit-keyframes entryLineDrop {
-    0% {
-        height: 0;
-    }
-
-    100% {
-        height: 16.666%;
-    }
-}
-
-@keyframes entryLineDrop {
-    0% {
-        height: 0;
-    }
-
-    100% {
-        height: 16.666%;
-    }
-}
-
-@-webkit-keyframes lineDraw {
-    0% {
-        width: 0;
-        opacity: .25;
-    }
-
-    100% {
-        width: 100%;
-        opacity: 1;
-    }
-}
-
-@keyframes lineDraw {
-    0% {
-        width: 0;
-        opacity: .25;
-    }
-
-    100% {
-        width: 100%;
-        opacity: 1;
-    }
-}
 
 /* ==========================================================================
    Helper classes
@@ -979,144 +649,72 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00061726', e
 }
 
 /* ==========================================================================
-   MEDIA QUERIES
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
    ========================================================================== */
 
+@media only screen and (min-width: 700px) {
+    h1 {
+        font-size: 40px;
+    } 
+
+    .scr-boil-articleBriefHead:before,
+    .scr-boil-articleBriefHead:after {
+        width: 40%;
+    }   
+}
+
 @media only screen and (min-width: 960px) {
-    .tech175-titleSlide-title {
-        top: calc((100% / 12) * 2);
-        bottom: auto;
-        width: calc((100% / 12) * 3);
-        padding: 25px 25px 25px 25px;
+    .scr-boil-footerContent-m {
+        display: none;
     }
 
-    .tech175-titleSlide-slug {
-        left: calc(8.333% - 100px);
-        top: 14%;
-        width: 75px;
-        height: 75px;
+    .scr-boil-shareLinks {
+        text-align: center;
+        border-bottom: 1px dotted black;
     }
 
-    .tech175-timeline-innerWrapper {
-        position: fixed;
+    .scr-boil-newsHead-d,
+    .scr-boil-articleShareText-d {
+        text-align: center;
     }
 
-    .tech175-titleSlide-titleTick {
-        position: absolute;
-        left: calc(8.333% + 25px);
-        top: 0;
-        width: 1px;
-        height: 16.666%;
-        background-color: white;
-        -webkit-animation-name: entryLineDrop;
-                animation-name: entryLineDrop;
-        -webkit-animation-duration: .5s;
-                animation-duration: .5s;
-        -webkit-animation-timing-function: cubic-bezier(0, 0, 0.28, 1.01);
-                animation-timing-function: cubic-bezier(0, 0, 0.28, 1.01);
+    .scr-boil-newsButton-d {
+        margin: 9px auto 0;
     }
 
-    .tech175-timeline-window,
-    .tech175-timeline {
-        position: absolute;
-    }
-
-    .tech175-timeline-innerWrapper,
-    .tech175-timeline-window,
-    .tech175-timeline {
-        left: 0;
-        top: 0;
-        height: 100vh;
-    }
-
-    .tech175-timelineIntro {
-        padding: 50px 35px 50px 35px;
-        -webkit-box-shadow: 0 5px 15px rgba(0,0,0,.7);
-                box-shadow: 0 5px 15px rgba(0,0,0,.7);
-    }
-
-    .tech175-timelineIntro p {
-        margin: 12% auto 0;
-    }
-
-    .tech175-timeline {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-orient: horizontal;
-        -webkit-box-direction: normal;
-            -ms-flex-direction: row;
-                flex-direction: row;
-        width: 1325%;
-    }
-
-    .tech175-timelineEntry {
-        padding: 0 0 0 0;
-        width: 125%
-    }
-
-    .tech175-timelineEntry-text {
-        position: absolute;
-        right: 0;
-        top: 0;
-        bottom: auto;
-        width: calc((100% / 12) * 3);
-        height: 100%;
-        padding: 6.333% 35px 35px;
-    }
-
-    .tech175-timelineEntry.in-view .tech175-timelineEntry-tick {
+    .scr-boil-authorBio-d,
+    .scr-boil-articleShare-d {
         display: block;
-        position: absolute;
-        left: 45px;
-        top: 0;
-        width: 1px;
-        height: 16.666%;
-        background-color: white;
-        -webkit-animation-name: entryLineDrop;
-                animation-name: entryLineDrop;
-        -webkit-animation-duration: .5s;
-                animation-duration: .5s;
-        -webkit-animation-timing-function: ease-out;
-                animation-timing-function: ease-out;
+        width: calc((100% / 12) * 2);
+        padding: 25px;
+    } 
+
+    .scr-boil-articleBrief,
+    .scr-boil-articleContent {
+        width: calc(100% / 12 * 8);
     }
 
-    .tech175-timeline-line {
-        position: fixed;
-        left: auto;
-        right: 0;
-        top: 4.166%;
-        height: 1px;
-        width: 100%;
-        background-color: white;
-        -webkit-box-shadow: 3px 3px 2px rgba(0,0,0,.6);
-                box-shadow: 3px 3px 2px rgba(0,0,0,.6);
-        -webkit-animation-name: lineDraw;
-                animation-name: lineDraw;
-        -webkit-animation-duration: 2s;
-                animation-duration: 2s;
-        -webkit-animation-timing-function: ease;
-                animation-timing-function: ease;
+    .scr-boil-articleBrief {
+        padding: 25px 50px 25px 50px;
     }
 
-    .tech175-timelineEntry-cover {
-        left: 30px;
-        top: 50%;
-        width: 175px;
-        height: auto;
-        padding: 12px;
-        -webkit-transform: translateY(-30%);
-            -ms-transform: translateY(-30%);
-                transform: translateY(-30%);
-    }
+    .scr-boil-articleContent {
+        padding: 75px 50px 25px 50px;
+    } 
+}
 
-    .tech175-videoPanel-window {
-        width: calc((100% / 12) * 8);
-        height: auto;
+@media only screen and (min-width: 1100px) {
+    h1 {
+        font-size: 50px;
+        letter-spacing: -2px;
     }
+}
 
-    .tech175-videoPanel-title {
-        font-size: 36px;
+@media only screen and (min-width: 1025px) {
+    .scr-boil-articleContent-fullImg {
+        background-attachment: fixed;
     }
 }
 
@@ -1191,3 +789,4 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00061726', e
     page-break-after: avoid;
   }
 }
+
