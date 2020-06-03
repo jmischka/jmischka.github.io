@@ -465,6 +465,17 @@ figcaption {
     font-size: 16px;
 }
 
+.scr-boil-articleContent p a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px dotted #666666;
+}
+
+.scr-boil-articleContent p a:hover {
+    color: black;
+    border-bottom: none;
+}
+
 .scr-boil-articleBriefHead:before,
 .scr-boil-articleBriefHead:after {
     content: "";
