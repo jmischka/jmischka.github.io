@@ -271,8 +271,8 @@ figcaption,
 }
 
 .scr-boil-articleByline {
-    margin: 12px 0 0 0;
-    color: #BDBDBD;
+    margin: 0 0 0 0;
+    color: #D6D6D6;
 }
 
 .scr-boil-authorBioText,
@@ -320,8 +320,8 @@ figcaption {
     display: inline-block;
     margin: 0 0 0 0;
     text-decoration: none;
-    color: #BDBDBD;
-    border-bottom: 1px dotted white;
+    color: #D6D6D6;
+    border-bottom: 1px dotted #D6D6D6;
 }
 
 .scr-boil-articleByline a:hover {
