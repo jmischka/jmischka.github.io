@@ -194,12 +194,12 @@ p {
     text-align: left;
 }
 
-.scr-boil-articleHead {
+.scr-boil-articleHead,
+.scr-boil-articleSubhead {
     margin: 0 auto 9px;
 }
 
 .scr-boil-articleSubhead {
-    margin: 0 auto 0;
     font-size: 18px;
     line-height: 1.3;
 }
