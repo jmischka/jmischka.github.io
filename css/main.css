@@ -365,7 +365,8 @@ p,
 }
 
 .covVir-introWrap,
-.covVir-intro {
+.covVir-intro,
+.covVir-sketchHeader {
     -webkit-transition-duration: 2s;
          -o-transition-duration: 2s;
             transition-duration: 2s;
@@ -385,10 +386,7 @@ p,
     padding: 75px 35px;
 }
 
-.covVir-mainContent .covVir-sketchHeader {
-    background-color: #0D0D0D;
-}
-
+.covVir-mainContent .covVir-sketchHeader,
 .covVir-mainContent .covVir-interactiveHeader,
 .covVir-mainContent .covVir-bodyTextWrapper,
 .covVir-readWrapper {

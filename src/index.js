@@ -3,6 +3,7 @@ import { gsap } from "gsap";
 const mainContent = document.querySelector('.covVir-mainContent');
 const introWrap = document.querySelector('.covVir-introWrap');
 const intro = document.querySelectorAll('.covVir-intro');
+const sketchHeader = document.querySelector('.covVir-sketchHeader');
 const interactiveWindows = Array.from(document.querySelectorAll('.covVir-interactiveWindow'));
 const counterTriggers = Array.from(document.querySelectorAll('.covVir-counter-trigger'));
 const frontPage = document.querySelector('.covVir-frontPage');
@@ -20,6 +21,8 @@ const interactiveThreeCountLinks = Array.from(document.querySelectorAll('.covVir
 let activeWindow;
 let startX;
 let endX;
+let dist;
+let threshold = 70;
 
 let oneCount = 0;
 let twoCount = 0;
@@ -85,12 +88,14 @@ function handleScroll() {
 		for (let i = 0; i < intro.length; i++) {
 			intro[i].style.color = 'white';
 		}
+		sketchHeader.style.backgroundColor = '#010D00';
 	} else if (mainContent.classList.contains('scrolled') && distanceScrolled < mainContent.offsetTop) {
 		mainContent.classList.remove('scrolled');
 		introWrap.style.backgroundColor = 'white';
 		for (let i = 0; i < intro.length; i++) {
 			intro[i].style.color = '#656565';
 		}
+		sketchHeader.style.backgroundColor = 'white';
 	}
 }
 
@@ -372,12 +377,13 @@ if (window.innerWidth < 1024) {
 		interactiveWindows[i].addEventListener('touchend', function(e){
 			activeWindow = this;
 		    let touchobj = e.changedTouches[0];
+		    dist = touchobj.pageX - startX;
 		    endX = touchobj.pageX;
-		    if (endX > startX) {
+		    if (endX > startX && Math.abs(dist) >= threshold) {
 		    	handlePrev();
-		    } else if (endX < startX) {
+		    } else if (endX < startX && Math.abs(dist) >= threshold) {
 		    	handleNext();  	
-		    }   
+		    }
 		    e.preventDefault();
 		}, false)
 	}
@@ -385,7 +391,3 @@ if (window.innerWidth < 1024) {
 	mobile = false;
 	window.addEventListener('scroll', desktopScroll);
 }
-
-// if (window.innerWidth > 1024) {
-	
-// }
