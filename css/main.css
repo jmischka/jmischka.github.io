@@ -586,6 +586,14 @@ p,
     height: auto;
 }
 
+.covVir-imgd {
+    display: none;
+}
+
+.covVir-imgm {
+    display: block;
+}
+
 .covVir-interactiveTextHead,
 .covVir-bodyHead {
     display: block; 
@@ -1151,6 +1159,14 @@ p,
 @media only screen and (min-width: 700px) {
     h1 {
         font-size: 40px;
+    }
+
+    .covVir-imgd {
+        display: block;
+    }
+
+    .covVir-imgm {
+        display: none;
     }    
 }
 
