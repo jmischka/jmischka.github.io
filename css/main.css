@@ -498,6 +498,8 @@ p,
     height: 90vh;
     overflow: hidden;
     background-color: white;
+    border-top: 1px solid #B0B0B0;
+    border-bottom: 1px solid #B0B0B0;
     -webkit-transition-duration: .5s;
          -o-transition-duration: .5s;
             transition-duration: .5s;
@@ -856,6 +858,8 @@ p,
         margin: 0 auto 0;
         width: 100%;
         height: auto;
+        border-top: none;
+        border-bottom: none;
         overflow: hidden;
     }
 
