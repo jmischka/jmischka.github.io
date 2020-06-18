@@ -370,9 +370,9 @@ if (window.innerWidth < 1024) {
 		    e.preventDefault();
 		}, false);
 
-		interactiveWindows[i].addEventListener('touchmove', function(e){
-		    e.preventDefault() // prevent scrolling when inside DIV
-		}, false)
+		// interactiveWindows[i].addEventListener('touchmove', function(e){
+		//     e.preventDefault();
+		// }, false)
 
 		interactiveWindows[i].addEventListener('touchend', function(e){
 			activeWindow = this;
