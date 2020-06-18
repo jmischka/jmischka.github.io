@@ -5,6 +5,7 @@ const introWrap = document.querySelector('.covVir-introWrap');
 const intro = document.querySelectorAll('.covVir-intro');
 const sketchHeader = document.querySelector('.covVir-sketchHeader');
 const interactiveWindows = Array.from(document.querySelectorAll('.covVir-interactiveWindow'));
+const swipeWindow = Array.from(document.querySelectorAll('.covVir-sWin'));
 const counterTriggers = Array.from(document.querySelectorAll('.covVir-counter-trigger'));
 const frontPage = document.querySelector('.covVir-frontPage');
 const frontpageTitle = Array.from(document.querySelectorAll('.covVir-frontPage-title'));
@@ -22,7 +23,7 @@ let activeWindow;
 let startX;
 let endX;
 let dist;
-let threshold = 70;
+let threshold = 50;
 
 let oneCount = 0;
 let twoCount = 0;
@@ -363,18 +364,18 @@ window.addEventListener('scroll', handleScroll);
 if (window.innerWidth < 1024) {
 	mobile = true;
 	window.addEventListener('scroll', mobileScroll);
-	for(let i = 0; i < interactiveWindows.length; i++) {
-		interactiveWindows[i].addEventListener('touchstart', function(e) {
+	for(let i = 0; i < swipeWindow.length; i++) {
+		swipeWindow[i].addEventListener('touchstart', function(e) {
 		    let touchobj = e.changedTouches[0];
 		    startX = touchobj.pageX;
 		    e.preventDefault();
 		}, false);
 
-		// interactiveWindows[i].addEventListener('touchmove', function(e){
-		//     e.preventDefault();
-		// }, false)
+		swipeWindow[i].addEventListener('touchmove', function(e){
+		    e.preventDefault();
+		}, false)
 
-		interactiveWindows[i].addEventListener('touchend', function(e){
+		swipeWindow[i].addEventListener('touchend', function(e){
 			activeWindow = this;
 		    let touchobj = e.changedTouches[0];
 		    dist = touchobj.pageX - startX;

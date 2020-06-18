@@ -568,6 +568,16 @@ p,
     padding: 25px 35px 0px 35px;
 }
 
+.covVir-sWin {
+    position: absolute;
+    display: block;
+    left: 50%;
+    top: 50%;
+    width: 90%;
+    height: 50%;
+    transform: translate(-50%,-50%);
+}
+
 .covVir-bodyImage {
     position: relative;
     display: block;
@@ -908,7 +918,11 @@ p,
 
     .covVir-interactiveWindow .covVir-interactiveItem:last-child {
         padding: calc(100vh) 0 calc(100vh) 0;
-    }  
+    } 
+
+    .covVir-sWin {
+        display: none;
+    } 
 
     .covVir-interactiveMedia {
         position: absolute;
