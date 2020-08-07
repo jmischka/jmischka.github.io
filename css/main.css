@@ -422,8 +422,8 @@ p {
             animation-name: slideDown;
     -webkit-animation-timing-function: ease;
             animation-timing-function: ease;
-    -webkit-animation-duration: 6s;
-            animation-duration: 6s;
+    -webkit-animation-duration: 8s;
+            animation-duration: 8s;
 }
 
 .timeline175-introSlide {
@@ -627,18 +627,6 @@ p {
     top: 50%;
 }
 
-.timeline175-heroSlide-media img {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    height: 100%;
-    width: auto;
-    max-width: none;
-    -webkit-transform: translate(-50%,-50%);
-        -ms-transform: translate(-50%,-50%);
-            transform: translate(-50%,-50%);
-}
-
 .timeline175-heroSlide-media video {
     -webkit-transform: translate(-50%,-50%);
         -ms-transform: translate(-50%,-50%);
@@ -681,11 +669,6 @@ p {
     .timeline175-entry-media .timeline175-media_d {
         width: 100%;
         height: auto;
-    }
-
-    .timeline175-heroSlide-media img {
-        height: auto;
-        width: 100%;
     }
 }
 
@@ -1239,7 +1222,6 @@ p {
     }
 }
 
-
 @media only screen and (min-width: 960px) {
     .timeline175-wrapper {
         height: calc((100vw * 24) + (28vw * 21) - (100vw - 100vh));
@@ -1259,6 +1241,10 @@ p {
         height: 3px;
         -webkit-animation-name: slideIn;
                 animation-name: slideIn;
+    }
+
+    .timeline175-scrollTip {
+        bottom: 75px;
     }
 
     .timeline175-pageTitle-container {

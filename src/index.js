@@ -23,7 +23,7 @@ function titleReveal() {
 	scrollTip.style.display = 'block';
 }
 
-setTimeout(titleReveal, 4000);
+setTimeout(titleReveal, 7000);
 
 function desktopScroll() {
 	if (mobile) {
@@ -143,7 +143,7 @@ function handleMobileNavClick(e) {
 	} else {
 		e.preventDefault();
 		function scroller() {
-			gsap.to(window, {duration: 4, scrollTo: {y: tElem, offsetY: -50, autoKill: false}, ease: "power3.out"});
+			gsap.to(window, {duration: 4, scrollTo: {y: tElem, offsetY: -200, autoKill: false}, ease: "power3.out"});
 		}
 		let tDate = this.getAttribute('href');
 		let tElem = document.getElementById(tDate);
