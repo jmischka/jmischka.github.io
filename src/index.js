@@ -14,14 +14,16 @@ const timelineEntry = Array.from(document.querySelectorAll('.timeline175-entry')
 const coverArchive = document.querySelector('.timeline175-coverArchive');
 const timelineProgress = document.querySelector('.timline175-progressFill');
 const pageTitle = document.querySelector('.timeline175-pageTitle');
+const scrollTip = document.querySelector('.timeline175-scrollTip');
 
 let mobile = true;
 
 function titleReveal() {
 	pageTitle.style.display = 'block';
+	scrollTip.style.display = 'block';
 }
 
-setTimeout(titleReveal, 8000);
+setTimeout(titleReveal, 4000);
 
 function desktopScroll() {
 	if (mobile) {
