@@ -242,13 +242,13 @@ p {
     width: 40px;
     height: 40px;
     border-radius: 100%;
-    background-color: black;
     cursor: pointer;
 }
 
 .timeline175-timelineNavigation-trigger {
     display: none;
     position: fixed;
+    background-color: #4AB9D9;
     z-index: 10;
     -webkit-animation-name: fadeIn;
             animation-name: fadeIn;
@@ -259,6 +259,7 @@ p {
 .timeline175-timelineNavigation-close {
     display: block;
     position: absolute;
+    background-color: black;
     border: 1px dotted #575757;
 }
 
@@ -341,14 +342,15 @@ p {
 
 .timeline175-timelineNavigation,
 .timeline175-timelineNavigation-link,
-.timeline175-navigationImg {
+.timeline175-navigationImg,
+.timeline175-timelineNavigation-trigger {
     -webkit-transition-duration: .35s;
          -o-transition-duration: .35s;
             transition-duration: .35s;
 }
 
 .timeline175-timelineNavigation-trigger:hover {
-    background-color: #4AB9D9;
+    background-color: #38658F;
 }
 
 .timeline175-timelineNavigation.active {
