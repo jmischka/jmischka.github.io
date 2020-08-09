@@ -116,20 +116,91 @@ p {
     font-style: normal;
 }
 
+.timeline175-loader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #1D2633;
+    z-index: 100;
+}
+
+.timeline175-loader-titleWrapper {
+    position: absolute;
+    left: 0;
+    top: 40%;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    -webkit-transform: translateY(-50%;);
+        -ms-transform: translateY(-50%;);
+            transform: translateY(-50%;);
+}
+
+.timeline175-loader-title {
+    display: inline-block;
+    margin: 0 1px 0 1px;
+    font-family: 'Lora',Brunel-Deck-Semibold,Georgia,serif;
+    font-weight: 600;
+    font-size: 20px;
+    font-style: normal;
+    line-height: 1.125;
+    color: white;
+    opacity: 0;
+    -webkit-transition-duration: .7s;
+         -o-transition-duration: .7s;
+            transition-duration: .7s;
+}
+
+.timeline175-loader-titleSpace {
+    display: inline-block;
+    margin: 0 10px 0 10px;
+}
+
+.timeline175-loader-timer {
+    position: relative;
+    display: none;
+    margin: 50px auto 0;
+    width: 50%;
+    height: 16px;
+    border: 1px solid #476080;
+    -webkit-animation-name: expandEnter;
+            animation-name: expandEnter;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+}
+
+.timeline175-loader-timerFill {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #6B90BF;
+    -webkit-animation-name: expand;
+            animation-name: expand;
+    -webkit-animation-duration: 5s;
+            animation-duration: 5s;
+}
+
 .timeline175-introSlide-mediaCaption,
 .timeline175-coverArchiveLink span,
 .timeline175-shareHeadline,
 .timeline175-newsletterHeadline,
-.timeline175-entryText-byline {
-    position: relative;
+.timeline175-entryText-byline,
+.timeline175-entryCredit {
     display: block;
+    position: relative;
     font-family: sans-serif;
-    font-weight: 400;
     line-height: 1.3;
 }
 
 .timeline175-introSlide-mediaCaption,
-.timeline175-coverArchiveLink span {
+.timeline175-coverArchiveLink span,
+.timeline175-entryText-byline,
+.timeline175-scrollTip,
+.timeline175-entryCredit {
     font-weight: 400;
 }
 
@@ -139,10 +210,11 @@ p {
 }
 
 .timeline175-introSlide-mediaCaption,
-.timeline175-coverArchiveLink span {
+.timeline175-coverArchiveLink span,
+.timeline175-entryCredit {
     font-size: 12px;
     width: 100%;
-    height: auto;
+    height: auto;   
 }
 
 .timeline175-introSlide-mediaCaption,
@@ -165,8 +237,16 @@ p {
     margin: 6px 0 0 0;
     font-size: 16px;
     width: 100%;
-    height: auto;
+    height: auto;    
+}
+
+.timeline175-entryText-byline,
+.timeline175-entryCredit {
     color: #969696;
+}
+
+.timeline175-entryCredit {
+    margin: 25px 0 0 0;
 }
 
 .timeline175-wrapper,
@@ -410,7 +490,7 @@ p {
 }
 
 .timeline175-line {
-    display: block;
+    display: none;
     position: absolute;
     left: 25px;
     top: 0;
@@ -1222,6 +1302,51 @@ p {
     }
 }
 
+@-webkit-keyframes expandEnter {
+    0% {
+        opacity: 0;
+        width: 0%;
+    }
+
+    100% {
+        opacity: 1;
+        width: 50%;
+    }
+}
+
+@keyframes expandEnter {
+    0% {
+        opacity: 0;
+        width: 0%;
+    }
+
+    100% {
+        opacity: 1;
+        width: 50%;
+    }
+}
+
+@-webkit-keyframes expand {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes expand {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+
 @media only screen and (min-width: 960px) {
     .timeline175-wrapper {
         height: calc((100vw * 24) + (28vw * 21) - (100vw - 100vh));
@@ -1232,7 +1357,6 @@ p {
     }
 
     .timeline175-line {
-        display: block;
         position: absolute;
         left: auto;
         top: 25px;
@@ -1241,10 +1365,6 @@ p {
         height: 3px;
         -webkit-animation-name: slideIn;
                 animation-name: slideIn;
-    }
-
-    .timeline175-scrollTip {
-        bottom: 75px;
     }
 
     .timeline175-pageTitle-container {
@@ -1260,6 +1380,10 @@ p {
         top: 50px;
         bottom: auto;
         text-align: left;
+    }
+
+    .timeline175-scrollTip {
+        bottom: 75px;
     }
 
     .timeline175-timelineNavigation-trigger {
