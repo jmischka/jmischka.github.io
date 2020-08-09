@@ -1462,6 +1462,11 @@ p {
         padding: 0 25px 0 0;
     }
 
+    .timeline175-introSlide-text p {
+        font-size: 24px;
+        text-align: center;
+    }
+
     .timeline175-entry {
         position: relative;
         margin: 0 0 0 0;
@@ -1607,4 +1612,3 @@ p {
     page-break-after: avoid;
   }
 }
-
