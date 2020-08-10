@@ -189,7 +189,8 @@ p {
 .timeline175-shareHeadline,
 .timeline175-newsletterHeadline,
 .timeline175-entryText-byline,
-.timeline175-entryCredit {
+.timeline175-entryCredit,
+.timeline175-credits li {
     display: block;
     position: relative;
     font-family: sans-serif;
@@ -200,7 +201,8 @@ p {
 .timeline175-coverArchiveLink span,
 .timeline175-entryText-byline,
 .timeline175-scrollTip,
-.timeline175-entryCredit {
+.timeline175-entryCredit,
+.timeline175-credits li {
     font-weight: 400;
 }
 
@@ -211,7 +213,8 @@ p {
 
 .timeline175-introSlide-mediaCaption,
 .timeline175-coverArchiveLink span,
-.timeline175-entryCredit {
+.timeline175-entryCredit,
+.timeline175-credits li {
     font-size: 12px;
     width: 100%;
     height: auto;   
@@ -1055,14 +1058,22 @@ p {
     text-align: center;
 }
 
-.timeline175-shareList {
-    position: relative;
-    margin: 35px 0 0 0;
+.timeline175-shareList,
+.timeline175-credits {
+    position: relative; 
     width: 100%;
     height: auto;
     list-style-type: none;
     padding: 0 0 0 0;
+}
+
+.timeline175-shareList {
+    margin: 35px 0 0 0;
     text-align: center;
+}
+
+.timeline175-credits {
+    margin: 0 0 0 0;
 }
 
 .timeline175-shareList li {
@@ -1097,6 +1108,26 @@ p {
     -webkit-transform: translate(-50%,-50%);
         -ms-transform: translate(-50%,-50%);
             transform: translate(-50%,-50%);
+}
+
+.timeline175-credits li {
+    margin: 0 0 3px 0;
+    padding: 0 25px 0;
+    width: 100%;
+    height: auto;
+}
+
+.timeline175-credits li a {
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    color: black;
+    border-bottom: 1px dotted black;
+}
+
+.timeline175-credits li a:hover {
+    border-bottom: none;
+    color: #636363;
 }
 
 
@@ -1524,7 +1555,7 @@ p {
 
     .timeline175-shareContent,
     .timeline175-newsletterContent {
-        margin: 0 0 0 0;
+        margin: 0 0 100px 0;
         width: 50%;
         float: left;
     }
