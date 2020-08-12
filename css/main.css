@@ -450,6 +450,7 @@ img {
     display: none;
     left: 0;
     top: 0;
+    bottom: auto;
     width: 100%;
     height: auto;
     padding: 75px 0 25px 0;
@@ -480,7 +481,7 @@ img {
     font-size: 14px;
     left: 50%;
     top: auto;
-    bottom: 135px;
+    bottom: 150px;
     text-transform: uppercase;
     color: white;
     -webkit-transform: translateX(-50%);
@@ -1392,10 +1393,11 @@ img {
     .tl175-pageTitle-container {
         position: absolute;
         left: calc((100% / 12) * 2);
-        top: 0;
+        top: auto;
+        bottom: 140px;
         width: calc((100% / 12) * 8);
         height: auto;
-        padding: 100px 0 25px 0;
+        padding: 25px 0 25px 0;
         background-color: transparent;
         -webkit-animation-name: fadeUp;
                 animation-name: fadeUp;
