@@ -100,9 +100,9 @@ html {
 
 h1 {
     margin: 0 0 0 0;
-    font-family: Benton,Helvetica,Arial,sans-serif;
+    font-family: 'Lora',Brunel-Deck-Semibold,Georgia,serif;
     font-weight: 600;
-    font-size: calc(50px + (110 - 50) * ((100vw - 320px) / (1600 - 320)));
+    font-size: calc(50px + (100 - 50) * ((100vw - 320px) / (1600 - 320)));
     font-style: normal;
     line-height: .9;
     letter-spacing: -2px;
@@ -1392,10 +1392,10 @@ img {
 
     .tl175-pageTitle-container {
         position: absolute;
-        left: calc((100% / 12) * 2);
+        left: calc((100% / 12) * 3);
         top: auto;
         bottom: 140px;
-        width: calc((100% / 12) * 8);
+        width: calc((100% / 12) * 6);
         height: auto;
         padding: 25px 0 25px 0;
         background-color: transparent;
