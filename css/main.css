@@ -671,7 +671,7 @@ img {
     width: 100%;
     height: 100vh;   
     z-index: -100;
-    background-color: black;
+    background-color: white;
     -webkit-transition-duration: .7s;
          -o-transition-duration: .7s;
             transition-duration: .7s;
@@ -899,7 +899,7 @@ img {
     display: block;
     margin: 0 0 0 0;
     width: 100%;
-    min-height: 100vh;
+    min-height: 125vh;
     height: auto;    
     padding: 50px 0 75px;
     background-color: white;
@@ -1069,7 +1069,8 @@ img {
 }
 
 .tl175-credits {
-    margin: 0 0 0 0;
+    margin: 150px 0 0 0;
+    float: none;
 }
 
 .tl175-shareList li {
@@ -1549,9 +1550,13 @@ img {
 
     .tl175-shareContent,
     .tl175-newsletterContent {
-        margin: 0 0 100px 0;
+        margin: 0 0 0 0;
         width: 50%;
         float: left;
+    }
+
+    .tl175-credits {
+        margin: 200px 0 0 0;
     }
         
 }
