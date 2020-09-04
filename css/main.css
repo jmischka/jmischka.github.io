@@ -764,12 +764,6 @@ body {
     background-color: rgba(0,0,0,.85);
 }
 
-.milestone.nobel-entry {
-    background-color: rgba(5,24,26,.9);
-    border-top: 1px dotted #E3CF3B;
-    border-bottom: 1px dotted #E3CF3B;
-}
-
 .milestone-textWrap,
 .milestone-animTxtWrap,
 .milestone-imgWrap,
