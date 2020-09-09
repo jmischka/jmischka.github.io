@@ -380,7 +380,14 @@ body {
     color: black;
 }
 
-.background {
+.milestone-background-overlays,
+.milestone-background-animEl {
+    display: none;
+}
+
+.milestone-background,
+.milestone-background-overlays,
+.milestone-background-animEl {
     position: fixed;
     left: 0;
     top: 0;
@@ -389,16 +396,120 @@ body {
     z-index: -50;
 }
 
-.background-img {
-    position: relative;
+.m-background-img {
     display: block;
+    background-image: url(../img/Bkgrnd-m.jpg);
+}
+
+.d-background-img {
+    display: none;
+    background-image: url(../img/Bkgrnd-d.jpg);
+}
+
+.overlay-1 {
+    background-image: url('../img/bOverlay-1.jpg');
+}
+
+.overlay-2 {
+    background-image: url('../img/bOverlay-2.jpg');
+}
+
+.overlay-3 {
+    background-image: url('../img/bOverlay-3.jpg');
+}
+
+.overlay-4 {
+    background-image: url('../img/bOverlay-4.jpg');
+}
+
+.overlay-5 {
+    background-image: url('../img/bOverlay-5.jpg');
+}
+
+.overlay-6 {
+    background-image: url('../img/bOverlay-6.jpg');
+}
+
+.backOverlay {
+    display: block;
+    opacity: 0;
+}
+
+.m-background-img,
+.d-background-img,
+.backOverlay {
+    position: fixed;
     margin: 0 0 0 0;
     width: 100%;
     height: 100%;
-    background-image: url(../img/Bkgrnd-FINAL.jpg);
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
+    transition-duration: 1s;
+}
+
+.m-background-img,
+.d-background-img {
+    animation-name: fadeIn;
+    animation-duration: 1s;
+}
+
+#t-cell,
+#d-cell {
+    position: absolute;
+    left: 28%;
+    top: 0;
+}
+
+#t-cell {
+    opacity: 1;
+    width: 225px;
+    height: auto;
+}
+
+#d-cell {
+    opacity: 0;
+    width: 275px;
+    height: auto;
+}
+
+#p-cell-a,
+#p-cell-b {
+    position: absolute;
+    left: 55%;
+    top: 80%;
+    width: 200px;
+    height: auto;
+    opacity: 0;
+}
+
+#p-cell-c {
+    position: absolute;
+    left: 45%;
+    top: 50%;
+    width: 200px;
+    height: auto;
+    opacity: 0;
+}
+
+#t-cell-b {
+    position: absolute;
+    left: 95%;
+    top: 60%;
+    width: 225px;
+    height: auto;
+    opacity: 0;
+}
+
+#anti-a,
+#anti-b,
+#anti-c {
+    position: absolute;
+    left: 35%;
+    top: 55%;
+    width: 35px;
+    height: auto;
+    opacity: 0;
 }
 
 .page-content {
@@ -763,6 +874,12 @@ body {
     height: auto;
     background-color: rgba(0,0,0,.85);
 }
+
+/*.milestone.nobel-entry {
+    background-color: rgba(5,24,26,.9);
+    border-top: 1px dotted #E3CF3B;
+    border-bottom: 1px dotted #E3CF3B;
+}*/
 
 .milestone-textWrap,
 .milestone-animTxtWrap,
@@ -1135,6 +1252,17 @@ body {
   clear: both;
 }
 
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 /* ==========================================================================
    EXAMPLE Media Queries for Responsive Design.
    These examples override the primary ('mobile first') styles.
@@ -1160,6 +1288,19 @@ body {
     .page-socialShare {
         width: 33px;
         height: 33px;
+    }
+
+    .milestone-background-overlays,
+    .milestone-background-animEl {
+        display: block;
+    }
+
+    .m-background-img {
+        display: none;
+    }
+
+    .d-background-img {
+        display: block;
     }
 
     .main-header {
@@ -1356,3 +1497,4 @@ body {
     page-break-after: avoid;
   }
 }
+

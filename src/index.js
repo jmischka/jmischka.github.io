@@ -1,13 +1,17 @@
 import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollToPlugin);
+gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
 
 const download = document.querySelector('.download-wrapper');
 const downloadTrigger = document.querySelector('.download-contentTrigger');
 const timelineWrapper = document.querySelector('.timeline-wrapper');
 const milestones = Array.from(document.querySelectorAll('.milestone'));
 const timelineDates = Array.from(document.querySelectorAll('.timeline-date'));
+const backgroundTriggers = Array.from(document.querySelectorAll('.btrigger'));
+const backOverlays = Array.from(document.querySelectorAll('.backOverlay'));
+
 
 function handleDownload(e) {
 	e.preventDefault();
@@ -56,6 +60,16 @@ function handleScroll() {
 			timelineDates[index - 1].classList.add('active');
 		}
 	})
+
+  backgroundTriggers.forEach((trigger,index) => {
+      if (!trigger.classList.contains('triggered') && distanceScrolled > trigger.offsetTop + trigger.parentElement.offsetTop + trigger.parentElement.offsetParent.offsetTop) {
+          trigger.classList.add('triggered');
+          backOverlays[index].style.opacity = '1';
+      } else if (trigger.classList.contains('triggered') && distanceScrolled < trigger.offsetTop + trigger.parentElement.offsetTop + trigger.parentElement.offsetParent.offsetTop) {
+          trigger.classList.remove('triggered');
+          backOverlays[index].style.opacity = '0';
+;      }
+  })
 }
 
 window.addEventListener('scroll', handleScroll);
@@ -65,5 +79,169 @@ for (let i = 0; i < timelineDates.length; i++) {
 }
 
 downloadTrigger.addEventListener('click', handleDownload);
+
+gsap.to(["#t-cell", "#d-cell"], {
+  y: window.innerHeight / 2.5,
+  rotation: 90,
+  scrollTrigger: {
+    trigger: ".animTrig",
+    start: "top center",
+    endTrigger: ".animTrig-2",
+    end: "bottom center",
+    scrub: true
+  }
+});
+
+// gsap.to("#d-cell", {
+//   y: window.innerHeight / 2.5,
+//   rotation: 90,
+//   scrollTrigger: {
+//     trigger: ".animTrig",
+//     start: "top center",
+//     endTrigger: ".animTrig-2",
+//     end: "bottom center",
+//     scrub: true
+//   }
+// });
+
+gsap.to("#t-cell", {
+  opacity: "0",
+  scrollTrigger: {
+    trigger: ".animTrig-2",
+    start: "bottom center",
+    end: "+=350",
+    scrub: true
+  }
+});
+
+gsap.to("#d-cell", {
+  opacity: "1",
+  scrollTrigger: {
+    trigger: ".animTrig-2",
+    start: "bottom center",
+    end: "+=350",
+    scrub: true
+  }
+});
+
+gsap.to(["#p-cell-a", "#p-cell-b"], {
+  opacity: "1",
+  scrollTrigger: {
+    trigger: ".animTrig-3",
+    start: "top center",
+    end: "+=350",
+    scrub: true
+  }
+});
+
+// gsap.to("#p-cell-b", {
+//   opacity: "1",
+//   scrollTrigger: {
+//     trigger: ".animTrig-3",
+//     start: "top center",
+//     end: "+=350",
+//     scrub: true
+//   }
+// });
+
+gsap.to(["#anti-a", "#anti-b", "#anti-c"], {
+  opacity: "1",
+  scrollTrigger: {
+    trigger: ".animTrig-3",
+    start: "top center",
+    end: "+=350",
+    scrub: true
+  }
+});
+
+gsap.to("#p-cell-a", {
+  y: -window.innerHeight / 1.35,
+  rotation: 180,
+  scrollTrigger: {
+    trigger: ".animTrig-4",
+    start: "top center",
+    endTrigger: ".animTrig-5",
+    end: "top center",
+    scrub: true
+  }
+});
+
+gsap.to("#p-cell-b", {
+  x: 300,
+  y: -window.innerHeight / 1.2,
+  rotation: -135,
+  scrollTrigger: {
+    trigger: ".animTrig-4",
+    start: "top center",
+    endTrigger: ".animTrig-5",
+    end: "top center",
+    scrub: true
+  }
+});
+
+gsap.to("#anti-a", {
+  x: -200,
+  y: -window.innerHeight / 1.35,
+  rotation: 360,
+  scrollTrigger: {
+    trigger: ".animTrig-4",
+    start: "top center",
+    endTrigger: ".animTrig-8",
+    end: "bottom center",
+    scrub: true
+  }
+});
+
+gsap.to("#anti-b", {
+  x: window.innerWidth / 2,
+  y: -window.innerHeight / 1.35,
+  rotation: -360,
+  scrollTrigger: {
+    trigger: ".animTrig-4",
+    start: "top center",
+    endTrigger: ".animTrig-8",
+    end: "bottom center",
+    scrub: true
+  }
+});
+
+gsap.to("#anti-c", {
+  x: window.innerWidth / 2,
+  y: 400,
+  rotation: 360,
+  scrollTrigger: {
+    trigger: ".animTrig-4",
+    start: "top center",
+    endTrigger: ".animTrig-8",
+    end: "bottom center",
+    scrub: true
+  }
+});
+
+gsap.to("#p-cell-c", {
+  x: 240,
+  rotation: -90,
+  opacity: "1",
+  scrollTrigger: {
+    trigger: ".animTrig-6",
+    start: "top center",
+    endTrigger: ".animTrig-7",
+    end: "bottom center",
+    scrub: true
+  }
+});
+
+gsap.to("#t-cell-b", {
+  x: -240,
+  rotation: 135,
+  opacity: "1",
+  scrollTrigger: {
+    trigger: ".animTrig-6",
+    start: "top center",
+    endTrigger: ".animTrig-7",
+    end: "bottom center",
+    scrub: true
+  }
+});
 
 
