@@ -24,6 +24,6 @@
   },
   "description": "",
   "dependencies": {
-    "gsap": "^3.4.2"
+    "gsap": "^3.6.0"
   }
 }
